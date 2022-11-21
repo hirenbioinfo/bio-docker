@@ -1,10 +1,10 @@
 #################################################################
 # Dockerfile
-#
-# Software Version: canu1.7.1
-# Description:      canu1.7.1 base on docker- A single molecule sequence 
+# Fly assembly
+# Software Version: flye1.7.1
+# Description:      flye1.7.1 base on docker- A single molecule sequence 
 #assembler for genomes large and small
-# Code:             https://github.com/marbl/canu
+# Code:             https://github.com/fenderglass/Flye
 # Base Image:       conda/miniconda3
 # Build Cmd:        sudo docker build -t cgwyx:canu .
 # Pull Cmd:         docker pull cgwyx/canu
