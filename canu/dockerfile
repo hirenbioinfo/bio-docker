@@ -1,0 +1,25 @@
+FROM ubuntu:20.04
+
+RUN apt-get update && apt-get install -y \
+    wget \
+    build-essential \
+    zlib1g-dev \
+    libncurses5-dev \
+    libncursesw5-dev \
+    curl \
+    libbz2-dev \
+    liblzma-dev \
+    libcurl4-gnutls-dev \
+    libssl-dev \
+    unzip \
+    openjdk-14-jdk 
+
+WORKDIR /opt
+RUN wget https://github.com/marbl/canu/releases/download/v2.0/canu-2.0.Linux-amd64.tar.xz && \
+    tar xvf canu-2.0.Linux-amd64.tar.xz && \
+    rm canu-2.0.Linux-amd64.tar.xz && \
+    ln -s /opt/canu-2.0.Linux-amd64/bin/canu /usr/local/bin/canu
+
+WORKDIR /data
+
+CMD ["canu"]
